@@ -202,3 +202,92 @@ footer {
 
 /*LOWER FOOTER*/
 
+
+/*INDEX HTML*/
+
+#whole-body {
+    display: flex;
+    flex-direction: column;
+}
+
+article {
+    display: flex;
+    flex-flow: column nowrap;
+
+    margin-top: 60px;
+    margin-left: 20px;
+    margin-bottom: 10px;;
+    
+    text-align: left;
+}
+
+#main-content {
+    display: flex; 
+    flex-direction: row;
+}
+
+#fieldset-filters {
+    display: flex;
+    flex-direction: column;
+}
+
+fieldset {
+    display: grid;
+    max-width: 300px;
+    margin-bottom: 30px;
+    margin-left: 20px;
+    border: 0;
+    background-color: rgba(0, 0, 0, .1);  
+    
+}
+
+fieldset p {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    text-align: left;  
+
+}
+
+.checkbox-grid {
+    display: grid;
+    grid-template-columns: 0.1fr 1fr;
+    grid-template-rows: auto;
+    overflow-y: scroll;
+}
+
+#graphics {
+    height: 600px;
+    width: 300px;
+
+}
+
+
+#tags, #sorted-by {
+    height: 220px;
+    width: 300px;
+    
+}
+
+#filter-type {
+    height: 300px;
+    width: 300px;
+
+}
+
+#box-games {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+}
+
+#contents {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    padding-left: 0;
+
+    list-style: none;
+    
+}
