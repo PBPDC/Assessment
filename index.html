@@ -58,19 +58,168 @@
             <li><a href="/freetogame.html">Log In</a></li>
             <li><a href="/freetogame.html"><button> Join Free</button></a></li>
             <button id="hamburger">&#8801;</button>
-        </nav> 
-    </nav>
+        </nav>
+        </nav>
+        
+        <article>
+            <header>
+                <h3>Advanced Game Search</h3>
+            </header>
+            <p>Find and filter free-to-play games your way!</p>
+            <p id="clear-filter"><a href="/freetogame.html">&#10754; Clear Filters</a></p>
+        </article>
+        
 
-    <article>
-        <header><h3>Advanced Game Search</h3></header>
-        <p>Find and filter free-to-play games your way!</p>
-        <p id="clear-filter"><a href="/freetogame.html">&#10754; Clear Filters</a></p>
-    </article>
+        <main id="whole-main">
+        
+            <form id="fieldset-filters">
+                <fieldset id="sorted-by">
+                    <p>
+                        <select id="sort" name="sort">
+                            <option value="sorted-by">Sorted By:</option>
+                            <option value="relevance">Relevance</option>
+                            <option value="popularity">Popularity</option>
+                            <option value="release-date">Release Date</option>
+                            <option value="alphabetical">Alphabetical</option>
+                        </select>
+                    </p>
+                    <h2>Platform</h2>
+                    <p class="checkbox-grid">
+                        <input type="checkbox" id="pc" name="pc" />
+                        <label for="pc">PC</label>
+                        <input type="checkbox" id="browser" name="browser" />
+                        <label for="browser">Browser</label>
+        
+                    </p>
+                </fieldset>
+        
+                <fieldset id="filter-type">
+                    <p>
+                        <select id="filter" name="filter">
+                            <option value="filter-type">Filter Type:</option>
+                            <option value="and">AND (All options selected)</option>
+                            <option value="or">OR (Any of the the options)</option>
+                            <option value="not">NOT (Excluding options)</option>
+                        </select>
+                    </p>
+                    <h2>Genre</h2>
+                    <p class="checkbox-grid">
+                        <input type="checkbox" id="mmo" name="mmo" />
+                        <label for="mmo">MMO</label>
+                        <input type="checkbox" id="mmorpg" name="mmorpg" />
+                        <label for="mmorpg">MMORPG</label>
+                        <input type="checkbox" id="shooter" name="shooter" />
+                        <label for="shooter">Shooter</label>
+                        <input type="checkbox" id="strategy" name="strategy" />
+                        <label for="strategy">Strategy</label>
+                        <input type="checkbox" id="moba" name="moba" />
+                        <label for="moba">Moba</label>
+                        <input type="checkbox" id="battle-royale" name="battle-royale" />
+                        <label for="battle-royale">Battle Royale</label>
+                        <input type="checkbox" id="card" name="card" />
+                        <label for="card">Card</label>
+                        <input type="checkbox" id="racing" name="racing" />
+                        <label for="racing">Racing</label>
+                        <input type="checkbox" id="sports" name="sports" />
+                        <label for="sports">Sports</label>
+                        <input type="checkbox" id="social" name="social" />
+                        <label for="social">Social</label>
+                        <input type="checkbox" id="fighting" name="fighting" />
+                        <label for="fighting">Fighting</label>
+                    </p>
+                </fieldset>
+        
+                <fieldset id="graphics">
+                    <h2>Graphics</h2>
+                    <p class="checkbox-grid">
+                        <input type="checkbox" id="3d-graphics" name="3d-graphics" />
+                        <label for="3d-graphics">3D Graphics</label>
+                        <input type="checkbox" id="2d-graphics" name="2d-graphics" />
+                        <label for="2d-graphics">2D Graphics</label>
+                    </p>
+                    <h2>Combat</h2>
+                    <p class="checkbox-grid">
+                        <input type="checkbox" id="pve" name="pve" />
+                        <label for="pve">PVE</label>
+                        <input type="checkbox" id="pvp" name="pvp" />
+                        <label for="pvp">PVP</label>
+                    </p>
+                    <h2>Gameplay</h2>
+                    <p class="checkbox-grid">
+                        <input type="checkbox" id="turn-based" name="turn-based" />
+                        <label for="turn-based">Turn-Based</label>
+                        <input type="checkbox" id="real-time" name="real-time" />
+                        <label for="real-time">Real-Time</label>
+                    </p>
+                    <h2>Setting</h2>
+                    <p class="checkbox-grid">
+                        <input type="checkbox" id="anime" name="anime" />
+                        <label for="anime">Anime</label>
+                        <input type="checkbox" id="fantasy" name="fantasy" />
+                        <label for="fantasy">Fantasy</label>
+                        <input type="checkbox" id="scifi" name="scifi" />
+                        <label for="scifi">Sci-Fi</label>
+                        <input type="checkbox" id="military" name="military" />
+                        <label for="military">Military</label>
+                        <input type="checkbox" id="horror" name="horror" />
+                        <label for="horror">Horror</label>
+                    </p>
+                </fieldset>
+        
+                <fieldset id="tags">
+                    <h2>Tags</h2>
+                    <p class="checkbox-grid">
+                        <input type="checkbox" id="mmofps" name="mmofps" />
+                        <label for="mmofps">MMOFPS</label>
+                        <input type="checkbox" id="sandbox" name="sandbox" />
+                        <label for="sandbox">Sandbox</label>
+                        <input type="checkbox" id="open-world" name="open-world" />
+                        <label for="open-world">Open World</label>
+                        <input type="checkbox" id="survival" name="survival" />
+                        <label for="survival">Survival</label>
+                        <input type="checkbox" id="action-rpg" name="action-rpg" />
+                        <label for="action-rpg">Action RPG</label>
+                        <input type="checkbox" id="mmorts" name="mmorts" />
+                        <label for="mmorts">MMORTS</label>
+                        <input type="checkbox" id="pixel" name="pixel" />
+                        <label for="pixel">Pixel</label>
+                        <input type="checkbox" id="voxel" name="voxel" />
+                        <label for="voxel">Voxel</label>
+                        <input type="checkbox" id="mmotps" name="mmotps" />
+                        <label for="mmotps">MMOTPS</label>
+                        <input type="checkbox" id="zombie" name="zombie" />
+                        <label for="zombie">Zombie</label>
+                        <input type="checkbox" id="first-person" name="first-person" />
+                        <label for="first-person">First-Person</label>
+                        <input type="checkbox" id="top-down" name="top-down" />
+                        <label for="top-down">Top-Down</label>
+                        <input type="checkbox" id="tank" name="tank" />
+                        <label for="tank">Tank</label>
+                        <input type="checkbox" id="space" name="space" />
+                        <label for="space">Space</label>
+                        <input type="checkbox" id="sailing" name="sailing" />
+                        <label for="sailing">Sailing</label>
+                        <input type="checkbox" id="side-scroller" name="side-scroller" />
+                        <label for="side-scroller">Side Scroller</label>
+                        <input type="checkbox" id="superhero" name="superhero" />
+                        <label for="superhero">Superhero</label>
+                        <input type="checkbox" id="permadeath" name="permadeath" />
+                        <label for="permadeath">Permadeath</label>
+                        <input type="checkbox" id="action" name="action" />
+                        <label for="action">Action</label>
+                        <input type="checkbox" id="martial-arts" name="martial-arts" />
+                        <label for="martial-arts">Martial Arts</label>
+                        <input type="checkbox" id="flight" name="flight" />
+                        <label for="flight">Flight</label>
+                        <input type="checkbox" id="low-spec" name="low-specx" />
+                        <label for="low-spec">Low-Spec</label>
+        
+                    </p>
+                </fieldset>
+            </form>
 
-    
 
-
-
+        </main>
 
 
 
