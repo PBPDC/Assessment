@@ -1,3 +1,10 @@
+* {
+    color:grey;
+    text-decoration: none;
+
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
 header {
     font-size: x-large;
     font-weight: bold;
@@ -63,7 +70,7 @@ body {
     list-style: none;
 }
 
-#browser-games select, #free-games select {
+nav select {
     border: none;
 
     font-size: 16px;
@@ -203,6 +210,7 @@ footer {
 /*LOWER FOOTER*/
 
 
+
 /*INDEX HTML*/
 
 #whole-body {
@@ -256,6 +264,17 @@ fieldset p {
     overflow-y: scroll;
 }
 
+section select {
+    
+    background-color: black;
+    color: grey;
+    border: 0;
+    height: 50px;
+    width: 300px;
+    padding: 10px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
 #graphics {
     height: 600px;
     width: 300px;
@@ -281,7 +300,7 @@ fieldset p {
     grid-gap: 10px;
 }
 
-#contents {
+#content {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -290,4 +309,13 @@ fieldset p {
 
     list-style: none;
     
+}
+
+#contents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 0;
+    background-color: rgba(0, 0, 0, .1);  
+    text-align: center;
 }
