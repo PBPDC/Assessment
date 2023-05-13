@@ -1,0 +1,125 @@
+header {
+    font-size: x-large;
+    font-weight: bold;
+    color: #bebeb6;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+ul {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+img:hover {
+    filter:brightness(2);
+}
+
+body {
+    margin-top: 50px;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    background-color: #272b30;
+}
+
+/*NAVIGATION BAR*/
+
+#home-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+    position: fixed;
+
+    height: 50px;
+    width: 100%;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    
+    background-color: #272b30;
+}
+
+#left-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    
+    height: 50px;
+    width: 650px;
+
+    padding-left: 0;    
+    padding-right: 60px; 
+
+    margin-right: 50px;
+
+    list-style: none;
+}
+
+#browser-games select, #free-games select {
+    border: none;
+
+    font-size: 16px;
+
+    background-color: #272b30;
+}
+
+select:hover {
+    color:white;
+}
+
+#free-games {
+    width: 110px;
+}
+
+#browser-games {
+    width: 135px;
+}
+
+
+#right-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+
+    height: 50px;
+    width: 250px;
+
+    padding-right: 0;
+
+    list-style: none;
+}
+
+nav button {
+   
+    border: solid 1px #4799eb;
+    border-radius: 5px;
+     
+    height: 46px;
+    width: 80px;
+
+    font-size: 16px;
+
+    background-color: #272b30;
+    color: lightskyblue;
+}
+
+nav button:hover {
+    color:white;
+    border-color: white;
+
+}
+
+
+
+/*NAVIGATION BAR*/
+
+
