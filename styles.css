@@ -166,6 +166,14 @@ footer {
     justify-content: space-evenly;
     align-items: center;
 
+    width: 200px;
+
+}
+
+.sm-icons:hover {
+    filter: brightness(0.5);
+
+    cursor: pointer;
 }
 
 /*LOWER FOOTER*/
@@ -228,7 +236,7 @@ fieldset {
     border: 0;
     border-radius: 10px;
     background-color: #32383e;
-    /*background-color: rgba(0, 0, 0, .1);  */
+
     padding-left: 24px;
     padding-right: 24px;
     padding-bottom: 24px;
@@ -455,14 +463,9 @@ section select:hover {
         margin-left: 20px;
         margin-right: 20px;
 
-        font-size: small;
-        
+        font-size: small;  
         
     }
-
-    
-
-
 }
 
 
