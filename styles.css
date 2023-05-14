@@ -434,19 +434,12 @@ section select:hover {
 /*INDEX HTML*/
 
 
+
+
 /* OVERWATCH2 HTML */
 
 /*MAIN*/
 
-#whole-main {
-    display: flex; 
-    flex-direction: row;
-
-    margin-top: 80px;
-    
-} 
-
-/*MAIN*/
 
 /*LEFT SIDE*/
 
@@ -511,7 +504,7 @@ section select:hover {
  
 #main-right {
     display: flex;
-    flex-direction: column;
+    flex-flow: column nowrap;
     
     padding-left: 567px;
 }
@@ -533,8 +526,13 @@ section select:hover {
     display: flex; 
     flex-direction: column;
     
-    width: 800px;
+    width: 480px;
 
+}
+
+#one-hundred {
+    display: flex;
+    align-items: center;
 }
 
 #ratings li {
@@ -573,7 +571,10 @@ section select:hover {
 #linkers {
     display: flex; 
     flex-direction: row;
-    align-items: center;
+    
+    width: 150px;
+    justify-content: space-evenly;
+    font-size: x-large;
 }
 
 #comment, #text_button {
@@ -624,19 +625,32 @@ textarea {
 
 /*MIDDLE RIGHT*/
 
+
+
 #oneparagraph, #twoparagraph, #disclose {
     margin-left: 0;
-    width: 675px;
+    max-width: 630px;
     text-align: justify;
 }
+
+
 
 #disclose {
     font-size: smaller;
     font-style: italic;
 }
 
+#disclose a, #about-overwatch2 a {
+    color: white;
+}
+
+#disclose a:hover, #about-overwatch2 a:hover {
+    color: grey;
+}
+
+
 #additional-information {
-    width: 650px;
+    max-width: 650px;
 
 }
 
@@ -665,11 +679,11 @@ textarea {
     flex-direction: row;
     justify-content: space-between;
     
-    width: 650px;
+    max-width: 630px;
 }
 
 .ss {
-    width: 200px;
+    width: 100%;
 }
 
 /*SCREENSHOTS*/
@@ -726,10 +740,11 @@ textarea {
 
 #secondcomment {
     padding-top: 10px;
+    align-items: center;
 }
 
 #name-time {
-    justify-content: space-around;
+    justify-content: space-between;
 
     width: 200px;
 }
@@ -758,9 +773,25 @@ textarea {
 #cap {
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: space-between;
 
-    width: 650px;
+    width: 630px;
+}
+
+#cap button {
+    color: white;
+    background-color: #3a3f44;
+    border-color: #22241d;
+    border-radius: 5px;
+
+    width: 140px;
+    height: 50px;
+}
+
+#cap button:hover {
+    background-color: black;
+    cursor: pointer;
 }
 
 /*BUTTON-CAPTION*/
@@ -771,16 +802,40 @@ textarea {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
 
-    width: 650px;
+    width: 630px;
 }
+
+#like-button button {
+    border: solid 1px grey;
+    border-radius: 5px;
+
+    width: 60px;
+    height: 35px;
+
+    cursor: pointer;
+    
+    background-color: transparent;
+    }
+
+#like-button button:hover {
+    filter: brightness(2);
+}
+
 
 #three-games {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 
-    width: 650px;
+    width: 630px;
+    
+}
+
+.games-row {
+    background-color:#32383e;  
+    border-radius: 5px;
 }
 
 .game-title {
@@ -861,8 +916,77 @@ textarea {
         background-color: #272b30;
     }
 
+    #whole-main {
+        display: flex; 
+        flex-direction: column;
+        
+    } 
+
+    #main-left, #main-right {
+        padding-left: 15px;
+        position: static;
+
+        margin-top: 30px;
+
+        width: 350px;
+    }
+
+    #starting-statement {
+        width: 200px;
+    }
+
+    #review {
+        width: 340px;
+    }
+
+    #about-overwatch2 blockquote, #disclose {
+        margin-right: 0;
+    }
+
+    #pictures {
+        flex-direction: column;
+        align-items: center;
+
+    }
     
+    .ss {
+        margin-bottom: 10px;
+    }
+
+    #cap button {
+        margin-left: 10px;
+    }
+    #specs, #copy-right, #firstcomment, #cap, #like-button , #three-games, #comment, #text_button {
+        width: 350px;
+    }
+
+    #comment-block {
+        width: 230px;
+    }
+
+    #comment-text {
+        width: 270px;
+    }
+
+    #three-games {
+        flex-direction: column;
+        justify-content: space-between;
+
+        height: 900px;
+    }
+
+  
+    
+
+    #row-one-specs, #row-two-specs, #row-three-specs {
+        grid-template-columns: 1fr;
+        row-gap: 10px;
+    }
+
+
 }
+
+
 
 @media screen and (min-width: 471px) and (max-width: 999px) {
 
@@ -907,6 +1031,75 @@ textarea {
 
         font-size: smaller;
     }
+
+    #whole-main {
+        display: flex; 
+        flex-direction: column;
+        align-items: center;
+        
+    } 
+
+    #main-left, #main-right {
+        padding-left: 15px;
+        position: static;
+
+        margin-top: 30px;
+
+        width: 100%;
+    }
+
+    #starting-statement {
+        width: 200px;
+    }
+
+    #review {
+        width: 340px;
+    }
+
+    #about-overwatch2 blockquote, #disclose {
+        margin-right: 0;
+    }
+
+    #pictures {
+        flex-direction: column;
+        align-items: center;
+
+    }
+    
+    .ss {
+        margin-bottom: 10px;
+    }
+
+    #cap button {
+        margin-left: 10px;
+    }
+    #specs, #copy-right, #firstcomment, #cap, #like-button , #three-games, #comment, #text_button {
+        width: 350px;
+    }
+
+    #comment-block {
+        width: 230px;
+    }
+
+    #comment-text {
+        width: 270px;
+    }
+
+    #three-games {
+        flex-direction: column;
+        justify-content: space-between;
+
+        height: 900px;
+    }
+
+  
+    
+
+    #row-one-specs, #row-two-specs, #row-three-specs {
+        grid-template-columns: 1fr;
+        row-gap: 10px;
+    }
+
 
 }
 
@@ -1123,5 +1316,13 @@ textarea {
 
         font-size: smaller;
     }
+
+    #whole-main {
+        display: flex; 
+        flex-direction: row;
+    
+        margin-top: 80px;
+        
+    } 
 
 }  
