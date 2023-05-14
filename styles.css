@@ -225,7 +225,7 @@ article {
 
     margin-top: 30px;
     margin-left: 20px;
-    margin-bottom: 10px;;
+    margin-bottom: 10px;
     
     text-align: left;
 }
@@ -258,7 +258,7 @@ fieldset {
     margin-left: 20px;
     border: 0;
     border-radius: 10px;
-    background-color: #32383e ;
+    background-color: #32383e;
     /*background-color: rgba(0, 0, 0, .1);  */
     padding-left: 24px;
     padding-right: 24px;
@@ -287,6 +287,7 @@ fieldset section {
     grid-template-columns: 0.1fr 1fr;
     row-gap: 5px;
     overflow-y: scroll;
+
 }
 
 section select {
@@ -315,6 +316,10 @@ section select {
     height: 300px;
 }
 
+#filter-type-checkbox {
+    height: 140px;
+}
+
 
 #sorted-by, #filter-type {
     
@@ -329,11 +334,18 @@ section select {
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 10px;
+    margin-left: 20px;
+
+    margin-right: 15px;
+
+    margin-bottom: 20px;
+
 }
 
-#content {
+#content-bottom {
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: space-around;
 
     padding-left: 0;
@@ -342,11 +354,44 @@ section select {
     
 }
 
-#contents {
+.contents {
     display: flex;
     flex-direction: column;
-    align-items: center;
+
+    /*justify-content: center;*/
+
     border: 0;
-    background-color: rgba(0, 0, 0, .1);  
-    text-align: center;
+    border-radius: 10px;
+    background-color:#32383e;  
+
+    
+}
+
+#header-free {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+#free {
+    height: 30px;
+    width: 30px;
+}
+
+.caption { 
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+#overwatch2, #diablo, #lost-ark, #pubg, #enlisted, #forge-of-empires {
+     
+    
+    height: auto;
+    max-width: 100%;
+
+
 }
