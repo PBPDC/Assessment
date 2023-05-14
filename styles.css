@@ -526,6 +526,7 @@ section select:hover {
 
 #title-name {
     margin-top: 0;
+    margin-bottom: 20px;
 }
 
 #starting-statement {
@@ -544,6 +545,7 @@ section select:hover {
 
 #directory {
     font-size: small;
+    margin-bottom: 10px;
 }
 
 #ratings {
@@ -568,16 +570,22 @@ section select:hover {
     width: 650px;
 }
 
+#linkers {
+    display: flex; 
+    flex-direction: row;
+    align-items: center;
+}
+
 #comment, #text_button {
     display: flex; 
     flex-direction: row; 
     justify-content: space-between;  
-    align-items: center;
+    align-items: flex-end;
 
-    width: 650px;
+    width: 630px;
 }
 
-#comment {
+#text_button {
     margin-top: 20px;
 
 }
@@ -602,8 +610,10 @@ textarea {
 #text_button button {
     border: 1px solid grey;
     background-color: transparent;
+    border-radius: 5px;
 
-    height: 120px;
+    height: 80px;
+    width: 100px;
 }
 
 #text_button button:hover {
