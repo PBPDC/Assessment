@@ -231,7 +231,6 @@ article {
 }
 
 
-
 /*UPPER BODY*/
 
 /*LOWER BODY*/
@@ -329,6 +328,10 @@ section select {
     
 }
 
+/*LEFT SIDE*/
+
+
+/*RIGHT SIDE*/
 
 #box-games {
     display: grid;
@@ -354,11 +357,16 @@ section select {
     
 }
 
+#plus {
+    height: 20px;
+    width: 20px;
+
+}
+
 .contents {
     display: flex;
     flex-direction: column;
 
-    /*justify-content: center;*/
 
     border: 0;
     border-radius: 10px;
@@ -395,3 +403,7 @@ section select {
 
 
 }
+
+/*LEFT SIDE*/
+
+/*INDEX HTML*/
