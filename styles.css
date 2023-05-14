@@ -343,7 +343,6 @@ section select:hover {
     margin-right: 15px;
 
     margin-bottom: 20px;
-
     
 
 }
@@ -361,8 +360,8 @@ section select:hover {
 }
 
 #plus {
-    height: 27px;
-    width: 27px;
+    height: 25px;
+    width: 25px;
 
 }
 
@@ -372,9 +371,18 @@ section select:hover {
 
     padding: 3px 3px;
     border-radius: 3px;
-    font-size: small;
+    font-size: x-small;
     font-weight: bold;
 
+}
+
+#type-windows {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    width: 100px;
+    margin-left: 100px;
 }
 
 .contents {
@@ -403,8 +411,8 @@ section select:hover {
 }
 
 #free {
-    height: 30px;
-    width: 30px;
+    height: 25px;
+    width: 25px;
 }
 
 .caption { 
@@ -424,6 +432,362 @@ section select:hover {
 /*LEFT SIDE*/
 
 /*INDEX HTML*/
+
+
+/* OVERWATCH2 HTML */
+
+/*MAIN*/
+
+#whole-main {
+    display: flex; 
+    flex-direction: row;
+
+    margin-top: 80px;
+    
+} 
+
+/*MAIN*/
+
+/*LEFT SIDE*/
+
+#main-left { 
+    display: flex; 
+    flex-direction: column;
+    align-items: flex-start;
+
+    position: fixed;
+
+    max-width: 350px; 
+
+
+    padding-left: 190px;
+
+    list-style: none;
+}
+
+#free-button {
+    background-color: #32383e;  
+    border: none;
+    border-radius: 10px;
+
+    height: 55px;
+    width: 100px;   
+
+    font-size: 20px;
+}
+
+#play-now {
+    background-color: #4799eb;
+    border: none; 
+    border-radius: 10px;
+    
+    height: 55px; 
+    width: 250px; 
+    
+    font-size: 20px;
+    color: white;
+}
+
+#free-button:hover, #play-now:hover {
+    filter: brightness(1.5);
+}
+
+#buttons-near, #preference {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+#account {
+    font-size: small;
+}
+
+/*LEFT SIDE*/
+
+
+/*RIGHT SIDE*/
+
+ 
+#main-right {
+    display: flex;
+    flex-direction: column;
+    
+    padding-left: 567px;
+}
+
+/*UPPER RIGHT*/
+
+#merge-start-pic {
+    display: flex;
+    flex-direction: row;
+    
+}
+
+#title-name {
+    margin-top: 0;
+}
+
+#starting-statement {
+    display: flex; 
+    flex-direction: column;
+    
+    width: 800px;
+
+}
+
+#ratings li {
+    font-size: larger;
+
+    margin-bottom: 10px;
+}
+
+#directory {
+    font-size: small;
+}
+
+#ratings {
+    margin-bottom: 0;
+}
+
+#review {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+    margin-top: 0;
+
+    width: 420px;
+
+    font-size: large;
+}
+
+#form {
+    display: flex; 
+    flex-direction: column;
+    width: 650px;
+}
+
+#comment, #text_button {
+    display: flex; 
+    flex-direction: row; 
+    justify-content: space-between;  
+    align-items: center;
+
+    width: 650px;
+}
+
+#comment {
+    margin-top: 20px;
+
+}
+
+#comment p {
+    font-size: large;
+    font-weight: bold;
+}
+
+textarea {
+    border:1px solid rgba(0,0,0,.6);
+    background-color: #1c1e22;
+    border-radius: 5px;
+
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 6px;
+    padding-right: 16px;
+
+}
+
+#text_button button {
+    border: 1px solid grey;
+    background-color: transparent;
+
+    height: 120px;
+}
+
+#text_button button:hover {
+    filter: brightness(1.5);
+}
+
+/*UPPER RIGHT*/
+
+/*MIDDLE RIGHT*/
+
+#oneparagraph, #twoparagraph, #disclose {
+    margin-left: 0;
+    width: 675px;
+    text-align: justify;
+}
+
+#disclose {
+    font-size: smaller;
+    font-style: italic;
+}
+
+#additional-information {
+    width: 650px;
+
+}
+
+#note {
+    font-size: smaller;
+}
+
+.col {
+    display: grid;
+    flex-direction: column;
+}
+
+#row-one, #row-two {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.aaa {
+    color: #bebeb6;
+}
+
+/*SCREENSHOTS*/
+
+#pictures {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+    width: 650px;
+}
+
+.ss {
+    width: 200px;
+}
+
+/*SCREENSHOTS*/
+
+
+/*REQUIREMENTS*/
+
+#merge-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#windows {
+    padding-left: 5px;
+}
+
+#specs {
+    width: 650px;
+}
+
+#row-one-specs, #row-two-specs, #row-three-specs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+/*REQUIREMENTS*/
+
+
+/*COPYRIGHT*/
+
+#copy-right {
+    font-size: x-small;
+    width: 650px;
+}
+
+/*COPYRIGHT*/
+
+
+/*USER REVIEWS*/
+
+#user-reviews {
+    display: flex;
+    flex-direction: column;
+
+    width: 650px;
+}
+
+#firstcomment, #secondcomment, #name-time {
+    display: flex;
+    flex-direction: row;
+
+}
+
+#secondcomment {
+    padding-top: 10px;
+}
+
+#name-time {
+    justify-content: space-around;
+
+    width: 200px;
+}
+
+#comment-block {
+    padding-left: 20px;
+
+    width: 500px;
+    height: 100px;
+
+    background-color: black;
+
+    border-radius: 10px;
+}
+
+#pic {
+    padding-right: 30px;
+
+    width: 75px;
+    height: 75px;
+
+}
+
+/*BUTTON-CAPTION*/
+
+#cap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    width: 650px;
+}
+
+/*BUTTON-CAPTION*/
+
+
+/*GAMES-ALIKE*/
+#like-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    width: 650px;
+}
+
+#three-games {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    width: 650px;
+}
+
+.game-title {
+    display: flex;
+    justify-content: center;
+}
+
+/*GAMES-ALIKE*/
+
+
+/*PICTURES*/
+
+#add, #meh, #dislike, #add, #like, #overwatchpic {
+    max-width: 100%;
+    max-height: auto;
+}
+
 
 
 
@@ -522,6 +886,7 @@ section select:hover {
     #main-content {
         flex-direction: row;
     }
+
 
     #bottom-footer {
         flex-flow: row nowrap;
@@ -731,6 +1096,10 @@ section select:hover {
     
     }
 
+    #type-windows {
+        margin-left: 0;
+    }
+
     section h2 {
         font-size: 17px;
     }
@@ -738,8 +1107,6 @@ section select:hover {
     a p {
         font-size: 13px;
     }
-
-
 
 
     #copyright {
