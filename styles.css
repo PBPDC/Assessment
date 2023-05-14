@@ -363,6 +363,16 @@ section select {
 
 }
 
+.type {
+    background-color: grey;
+    color: #32383e;
+
+
+    border-radius: 3px;
+    font-size: small;
+    font-weight: bold;
+}
+
 .contents {
     display: flex;
     flex-direction: column;
