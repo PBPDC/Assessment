@@ -441,6 +441,7 @@ section select:hover {
 /*MAIN*/
 
 
+
 /*LEFT SIDE*/
 
 #main-left { 
@@ -452,8 +453,6 @@ section select:hover {
 
     max-width: 350px; 
 
-
-    padding-left: 190px;
 
     list-style: none;
 }
@@ -506,7 +505,7 @@ section select:hover {
     display: flex;
     flex-flow: column nowrap;
     
-    padding-left: 567px;
+    padding-left: 375px;
 }
 
 /*UPPER RIGHT*/
@@ -830,6 +829,7 @@ textarea {
     justify-content: space-between;
 
     width: 630px;
+
     
 }
 
@@ -916,12 +916,6 @@ textarea {
         background-color: #272b30;
     }
 
-    #whole-main {
-        display: flex; 
-        flex-direction: column;
-        
-    } 
-
     #main-left, #main-right {
         padding-left: 15px;
         position: static;
@@ -974,8 +968,6 @@ textarea {
 
         height: 900px;
     }
-
-  
     
 
     #row-one-specs, #row-two-specs, #row-three-specs {
@@ -1048,13 +1040,6 @@ textarea {
         width: 100%;
     }
 
-    #starting-statement {
-        width: 200px;
-    }
-
-    #review {
-        width: 340px;
-    }
 
     #about-overwatch2 blockquote, #disclose {
         margin-right: 0;
@@ -1073,30 +1058,21 @@ textarea {
     #cap button {
         margin-left: 10px;
     }
-    #specs, #copy-right, #firstcomment, #cap, #like-button , #three-games, #comment, #text_button {
-        width: 350px;
-    }
 
-    #comment-block {
-        width: 230px;
-    }
-
-    #comment-text {
-        width: 270px;
-    }
 
     #three-games {
         flex-direction: column;
         justify-content: space-between;
-
-        height: 900px;
     }
 
-  
+    
+    .games-row {
+        max-width: 630px;
+    }
     
 
     #row-one-specs, #row-two-specs, #row-three-specs {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
         row-gap: 10px;
     }
 
@@ -1172,6 +1148,10 @@ textarea {
         margin-right: 30px;
 
         list-style: none;
+    }
+
+    #whole-main {
+        margin-top: 80px;
     }
 
     #main-content {
@@ -1322,7 +1302,15 @@ textarea {
         flex-direction: row;
     
         margin-top: 80px;
+
+        margin-left: 190px;
+        margin-right: 270px;
         
     } 
+
+    .games-row {
+        max-width: 190px;
+        max-height: 170px;
+    }
 
 }  
