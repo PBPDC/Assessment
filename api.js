@@ -1,11 +1,11 @@
 //get live game list 
-const getLiveGameList = async () => {
+const getLiveGames = async () => {
     const base = 'https://www.freetogame.com/api/games';
 
     const response = await fetch(base); 
     const data = await response.json(); 
 
-    return data; 
+    return data;
 
 };
 
@@ -16,6 +16,8 @@ const getGameByPlatform = async (platform) => {
 
     const response = await fetch(base + query); 
     const data = await response.json(); 
+
+    // console.log(data);
 
     return data; 
 
@@ -80,6 +82,15 @@ const getCertainGame = async (id) => {
     return data; 
 
 };
+
+
+// getLiveGames().then (data => {
+//     return getLiveGames();
+// });
+
+// getGameByPlatform().then (data => {
+//     return data;
+// });
 
 
 

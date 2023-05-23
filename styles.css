@@ -29,6 +29,7 @@ body { /*to set margin on top of the body and remove the other margins and to se
     margin-right: 0;
     margin-bottom: 0;
     background-color: #272b30;
+    height: auto;
 }
 
 
@@ -99,11 +100,16 @@ nav button:hover { /*whenever the button (join free) is hovered, the font and bo
 /*FOOTER*/
 footer { /*footer is the whole footer; it is divided into two namely: top-footer and bottom-footer*/
     display: flex;
+    box-sizing: border-box;
     flex-direction: column;
     align-items: center;
+   
+    position: relative;
 
     height: auto;
     width: 100%;
+
+    margin: 0;
 
     
     bottom: 0;
@@ -195,6 +201,7 @@ footer { /*footer is the whole footer; it is divided into two namely: top-footer
 #whole-body { /*whole-body is the contents of the page, it is set to column because the content is divided into two namely: upper body and lower body*/
     display: flex;
     flex-direction: column;
+    box-sizing: border-box;
 }
 
 
@@ -331,10 +338,10 @@ fieldset section { /*sets the paddings of the content(words) in the fieldsets*/
 
 
 /*RIGHT SIDE*/
-#box-games { /*puts the games into a grid, one column since approach is mobile-first*/
+.box-games { /*puts the games into a grid, one column since approach is mobile-first*/
     display: grid;
     grid-template-columns: 1fr;
-    grid-gap: 30px;
+    grid-gap: 20px;
     margin-left: 20px;
 
     margin-right: 15px;
@@ -376,6 +383,8 @@ fieldset section { /*sets the paddings of the content(words) in the fieldsets*/
 .contents { /*sets the container of the individual games on the box*/
     display: flex;
     flex-direction: column;
+
+    width: 260px;
 
     border: 0;
     border-radius: 10px;
@@ -422,9 +431,9 @@ fieldset section { /*sets the paddings of the content(words) in the fieldsets*/
     cursor: pointer;
 }
 
-#overwatch2, #diablo, #lost-ark, #pubg, #enlisted, #forge-of-empires { 
+.thumbnail { 
     height: auto;
-    max-width: 100%;
+    width: 100%;
 }
 /*RIGHT SIDE*/
 /*INDEX HTML*/
@@ -1136,16 +1145,15 @@ textarea { /*sets the properties of the input textarea*/
         flex-direction: row;
     }
 
-    #box-games { /*boxs games are now two columns*/
+    .box-games { /*boxs games are now two columns*/
         grid-template-columns: 1fr 1fr;
-        grid-gap: 30px;
+        grid-gap: 20px;
         margin-left: 20px;
     
         margin-right: 15px;
     
         margin-bottom: 20px;
 
-        height: 350px;
     
     }
 
@@ -1229,16 +1237,15 @@ textarea { /*sets the properties of the input textarea*/
 
     }
 
-    #box-games { /*boxs games are now three columns*/
+    .box-games { /*boxs games are now three columns*/
         grid-template-columns: 1fr 1fr 1fr;
-        grid-gap: 30px;
+        grid-gap: 20px;
         margin-left: 20px;
     
         margin-right: 15px;
     
         margin-bottom: 20px;
 
-        height: 350px;
 
     
     }
@@ -1276,6 +1283,8 @@ textarea { /*sets the properties of the input textarea*/
         max-width: 190px;
         max-height: 170px;
     }
+
+    
 
 }  
 /*MEDIA QUERY*/
