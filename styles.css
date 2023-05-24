@@ -60,7 +60,7 @@ body { /*to set margin on top of the body and remove the other margins and to se
     border-bottom: 1px solid rgba(28,28,28,.6);
 }
 
-nav select { /*to remove border, to increase font-size and to change bg color of dropdowns */
+nav select, #free-games, #browser-games { /*to remove border, to increase font-size and to change bg color of dropdowns */
     border: none;
 
     font-size: 16px;
@@ -91,6 +91,69 @@ nav button:hover { /*whenever the button (join free) is hovered, the font and bo
     border-color: white;
     cursor: pointer;
 }
+
+#hamburger {
+    background-color: transparent;
+    color:grey;
+    border-radius: 5px;
+    border: solid 1px grey;
+    z-index: 1;
+}
+
+#hamburger:hover, .dropdown-options a:hover {
+    filter:brightness(2);
+    cursor: pointer;
+}
+
+.dropdown-options {
+    /* display: none; */
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+    min-width: 350px;
+    min-height: 400px;
+
+    padding-top: 40px;
+    padding-left: 10px;
+
+    
+
+}
+.dropdown-container {
+    display: none;
+    position: relative;
+    background-color: #272b30;
+    z-index: -1;
+    
+       
+
+}
+
+.dropdown-options a {
+    display: flex; 
+    align-items: center;
+
+    justify-content: flex-start;
+    
+
+}
+
+.dropdown-options button {
+    border: solid 1px #4799eb;
+    border-radius: 5px;
+ 
+    height: 30px;
+    width: 80px;
+
+    font-size: 16px;
+
+    background-color: #272b30;
+    color: lightskyblue;
+}
+
+
 /*NAVIGATION BAR*/
 
 
@@ -339,9 +402,13 @@ fieldset section { /*sets the paddings of the content(words) in the fieldsets*/
 
 /*RIGHT SIDE*/
 .box-games { /*puts the games into a grid, one column since approach is mobile-first*/
-    display: grid;
+    /* display: grid;
     grid-template-columns: 1fr;
-    grid-gap: 20px;
+    grid-gap: 20px; */
+
+    display: flex; 
+    flex-flow: row wrap;
+    row-gap: 20px;
     margin-left: 20px;
 
     margin-right: 15px;
@@ -354,6 +421,8 @@ fieldset section { /*sets the paddings of the content(words) in the fieldsets*/
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
+    
+    margin-top: 10px;
 
     padding-left: 0;
 
@@ -384,7 +453,8 @@ fieldset section { /*sets the paddings of the content(words) in the fieldsets*/
     display: flex;
     flex-direction: column;
 
-    width: 260px;
+    width: 340px;
+    /* height: 275px; */
 
     border: 0;
     border-radius: 10px;
@@ -414,6 +484,9 @@ fieldset section { /*sets the paddings of the content(words) in the fieldsets*/
 .caption { 
     padding-left: 24px;
     padding-right: 24px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 #add-to-lib { /*sets the properties of the dropdown add-to-lib*/
@@ -1146,8 +1219,11 @@ textarea { /*sets the properties of the input textarea*/
     }
 
     .box-games { /*boxs games are now two columns*/
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 20px;
+        /* grid-template-columns: 1fr 1fr;
+        grid-gap: 20px; */
+
+        column-gap: 20px;
+        
         margin-left: 20px;
     
         margin-right: 15px;
@@ -1188,7 +1264,7 @@ textarea { /*sets the properties of the input textarea*/
     }
 
     #home-nav { /**/
-        padding-left: 150px;
+        padding-left: 173px;
     }
     
     #right-nav { /*sets the container of the right-nav*/
@@ -1218,7 +1294,7 @@ textarea { /*sets the properties of the input textarea*/
         padding-left: 0;
 
 
-        margin-right: 30px;
+        margin-right: 72px;
 
         list-style: none;
     }
@@ -1227,19 +1303,21 @@ textarea { /*sets the properties of the input textarea*/
         flex-direction: row;
 
         padding-left: 170px;
-        padding-right: 270px;
+        padding-right: 130px;
     }
 
     article { /*put the article in the middle*/
         padding-left: 170px;
-        padding-right: 270px;
+        padding-right: 158px;
         
 
     }
 
     .box-games { /*boxs games are now three columns*/
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-gap: 20px;
+        /* grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 20px; */
+        align-content: flex-start;
+        column-gap: 20px;
         margin-left: 20px;
     
         margin-right: 15px;
@@ -1250,12 +1328,28 @@ textarea { /*sets the properties of the input textarea*/
     
     }
 
+    .contents { /*sets the container of the individual games on the box*/
+        display: flex;
+        flex-direction: column;
+    
+        width: 260px;
+        height: 275px;
+    
+        border: 0;
+        border-radius: 10px;
+        background-color:#32383e;  
+     
+    }
+
     #type-windows {
         margin-left: 0;
     }
 
     section h2 {
         font-size: 17px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     a p {

@@ -9,48 +9,22 @@ const getLiveGames = async () => {
 
 };
 
-//get games by platform
-const getGameByPlatform = async (platform) => {
-    const base = 'https://www.freetogame.com/api/games';
-    const query = `?platform=${platform}`; 
 
-    const response = await fetch(base + query); 
-    const data = await response.json(); 
-
-    // console.log(data);
-
-    return data; 
-
-};
-
-//filter games by category or tag
-const getGameByCategory = async (category) => {
-    const base = 'https://www.freetogame.com/api/games';
-    const query = `?category=${category}`; 
-
-    const response = await fetch(base + query); 
-    const data = await response.json(); 
-
-    return data; 
-
-};
-
-//sort games 
-const sortByGames = async (sort) => {
-    const base = 'https://www.freetogame.com/api/games';
-    const query = `?sort-by=${sort}`; 
-
-    const response = await fetch(base + query); 
-    const data = await response.json(); 
-
-    return data; 
-
-};
-
-//get by platform and category and sort 
 const getGamesByPlatformCategorySort = async (platform, category, sort) => {
-    const base = 'https://www.freetogame.com/api/games';
-    const query = `?platform=${platform}&category=${category}&sort-by=${sort}`; 
+    const base = 'https://www.freetogame.com/api';
+    let query = ``;
+    
+    const categories = Array.from(category).join('.');
+
+    if (category.size > 1) {
+        query = `/filter?tag=${categories}&sort-by=${sort}&platform=${platform}`; 
+    } else if (category.size === 1){
+        query = `/games?platform=${platform}&category=${categories}&sort-by=${sort}`; 
+    } else {
+        query = `/games?platform=${platform}&sort-by=${sort}`; 
+    }
+
+    console.log(query);
 
     const response = await fetch(base + query); 
     const data = await response.json(); 
@@ -59,17 +33,6 @@ const getGamesByPlatformCategorySort = async (platform, category, sort) => {
 
 };
 
-//filter games by tags and platform
-const getGamesByTagPlatform = async (tag, platform) => {
-    const base = 'https://www.freetogame.com/api/filter';
-    const query = `?tag=${platform}&platform=${platform}`; 
-
-    const response = await fetch(base + query); 
-    const data = await response.json(); 
-
-    return data; 
-
-};
 
 //return certain game
 const getCertainGame = async (id) => {
@@ -82,15 +45,6 @@ const getCertainGame = async (id) => {
     return data; 
 
 };
-
-
-// getLiveGames().then (data => {
-//     return getLiveGames();
-// });
-
-// getGameByPlatform().then (data => {
-//     return data;
-// });
 
 
 

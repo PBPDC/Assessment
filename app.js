@@ -1,5 +1,10 @@
 const contentGame = document.querySelector('.contents');
-const platformCheckBox = document.querySelectorAll('.platform_checkbox'); 
+const categoryCheckBox = document.querySelectorAll('.filter-checkbox'); 
+const sortDropDown = document.querySelector('#sort');
+const hamBurger = document.querySelector('#hamburger'); 
+const dropDownContainer = document.querySelector('.dropdown-container'); 
+
+
 
 
 
@@ -17,7 +22,7 @@ const updateUI = async (data) => {
         const clone = contentGame.cloneNode(true);
 
         clone.innerHTML = `
-            <a href=${details[i].game_url}>
+            <a href=${details[i].freetogame_profile_url}>
             <img class="thumbnail" id="${details[i].id}" src="${details[i].thumbnail}" alt="${details[i].title}.png" />
             <section id="header-free">
                 <h2>${details[i].title}</h2>
@@ -52,66 +57,51 @@ const updateUI = async (data) => {
 };
 
 
-
-// };
-
-// Form.addEventListener('submit', e => {
-//     //prevent default action
-//     e.preventDefault(); 
-
-//     //get city value
-//     const city = cityForm.city.value.trim(); 
-//     cityForm.reset();
-
-//     //update the ui with new city
-//     updateCity(city)
-//         .then(data => updateUI(data))
-//         .catch(err => console.log(err));  
-
-//     //set local storage
-//     localStorage.setItem('city', city); 
-
-// });
-
 updateUI(getLiveGames()); 
 
-platformCheckBox.forEach(function(checkbox) {
-    checkbox.addEventListener('change', function(){
-        if (this.checked === true) {
-            updateUI(getGameByPlatform(this.id));
+
+const category = new Set(); 
+const platformUsed = new Set();   
 
 
-        } else if (this.checked === false){
-            updateUI(getLiveGames());
-        } 
+function checkFilter(event) { 
+    const checkbox = event.target; 
+    let platformDefault = "all"; 
+
+    if (platformUsed.has(checkbox.id) && (checkbox.id === "browser" || checkbox.id === "pc")) {
+        platformUsed.delete(checkbox.id); 
+    } else if (!platformUsed.has(checkbox.id) && (checkbox.id === "browser" || checkbox.id === "pc")) {
+        platformUsed.add(checkbox.id); 
+    } else if (category.has(checkbox.id)) {
+        category.delete(checkbox.id); 
+    } else {
+        category.add(checkbox.id); 
+    }
+
+    if (platformUsed.size === 1) {
+        platformDefault = Array.from(platformUsed).join('');
+    }
+
     
-    });
-});    
+
+    updateUI(getGamesByPlatformCategorySort(platformDefault, category, sortDropDown.value)); 
 
 
+}
 
-// checkBox.addEventListener('click', e => {
+categoryCheckBox.forEach(function(checkbox) {
+    checkbox.addEventListener('change', checkFilter);
+   
+});
 
-//     if(e.target.IdList.contains('anime')) {
-//         e.target.parentElement.remove(); 
-//     }
+hamBurger.addEventListener('click', () => {
 
-// });
-// const updateGame = async () => {
+    if (dropDownContainer.style.display === "block") {
+        dropDownContainer.style.display = "none";
+    } else {
+        dropDownContainer.style.display = "block";
+    }
     
-//     const liveGames = await getLiveGames(); 
-//     //const weather = await getWeather(cityDets.Key);
-
-//     return liveGames; 
-//     // return {
-//     //     cityDets: cityDets,
-//     //     weather: weather
-//     // };
-// };
-
-// updateUI(getLiveGames()).then(data => {
-//     console.log('hello');
-// });
-
-
-    //.catch(err => console.log('rejected:', err.message));
+    
+    
+});
