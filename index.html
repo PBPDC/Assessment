@@ -15,50 +15,50 @@
         <nav id="left-nav">
             <li id=free-to-game-logo><img src="freetogame-logo.png" alt="free-to-game-logo"> </li>
             <li>
-                <select id="free-games" name="free-games">
-                    <optgroup>
-                        <option value="" disabled selected>Free Games</option>
-                        <option value="mmorpg">MMORPG</option>
-                        <option value="shooter">Shooter</option>
-                        <option value="moba">MOBA</option>
-                        <option value="anime">Anime</option>
-                        <option value="battle-royale">Battle Royale</option>
-                        <option value="strategy">Strategy</option>
-                        <option value="fantasy">Fantasy</option>
-                        <option value="scifi">Sci-Fi</option>
-                        <option value="card-games">Card Games</option>
-                        <option value="racing">Racing</option>
-                        <option value="fighting">Fighting</option>
-                        <option value="social">Social</option>
-                        <option value="sports">Sports</option>
-                    </optgroup>
-                    <optgroup>
-                        <option value="free-to-play-games">Free-to-Play Games</option>
-                    </optgroup>
-                </select>
+                <button id="free-games" name="free-games">Free Games &#9662;</button>
+                <section class="option-dropdown dropdown-pc">
+                    <a title="mmorpg" href ="https://www.freetogame.com/games/mmorpg">MMORPG</a>
+                    <a title="shooter" href="https://www.freetogame.com/games/shooter">Shooter</a>
+                    <a title="moba" href="https://www.freetogame.com/games/moba">MOBA</a>
+                    <a title="anime" href="https://www.freetogame.com/games/anime">Anime</a>
+                    <a title="battle-royale" href="https://www.freetogame.com/games/battle-royale">Battle Royale</a>
+                    <a title="strategy" href="https://www.freetogame.com/games/strategy">Strategy</a>
+                    <a title="fantasy" href="https://www.freetogame.com/games/fantasy">Fantasy</a>
+                    <a title="scifi" href="https://www.freetogame.com/games/sci-fi">Sci-Fi</a>
+                    <a title="card-games" href="https://www.freetogame.com/games/card">Card Games</a>
+                    <a title="racing" href="https://www.freetogame.com/games/racing">Racing</a>
+                    <a title="fighting" href="https://www.freetogame.com/games/fighting">Fighting</a>
+                    <a title="social" href="https://www.freetogame.com/games/social">Social</a>
+                    <a title="sports" href="https://www.freetogame.com/games/sports">Sports</a>
+                    <a title="free-to-play-games" class="blue" href="https://www.freetogame.com/games">Free-to-Play Games</a>
+                </section>
             </li>
             <li>
-                <select id="browser-games" name="browser-games">
-                    <optgroup>
-                        <option value="" disabled selected>Browser Games</option>
-                        <option value="browser-mmorpg">Browser MMORPG</option>
-                        <option value="browser-shooter">Browser Shooter</option>
-                        <option value="browser-anime">Browser Anime</option>
-                        <option value="browser-strategy">Browser Strategy</option>
-                        <option value="browser-fantasy">Browser Fantasy</option>
-                        <option value="browser-scifi">Browser Sci-Fi</option>
-                        <option value="browser-racing">Browser Racing</option>
-                        <option value="browser-social">Browser Social</option>
-                        <option value="browser-sports">Browser Sports</option>
-                    </optgroup>
-                    <optgroup>
-                        <option value="browser-games">Browser Games</option>
-                    </optgroup>
-                </select>
+                <button id="browser-games" name="browser-games">Browser Games &#9662;</button>
+                <section class="option-dropdown dropdown-browser">
+                    <a title="browser-mmorpg" href="https://www.freetogame.com/browser/mmorpg">Browser MMORPG</a>
+                    <a title="browser-shooter" href="https://www.freetogame.com/browser/shooter">Browser Shooter</a>
+                    <a title="browser-anime" href="https://www.freetogame.com/browser/anime">Browser Anime</a>
+                    <a title="browser-strategy" href="https://www.freetogame.com/browser/strategy">Browser Strategy</a>
+                    <a title="browser-fantasy" href="https://www.freetogame.com/browser/fantasy">Browser Fantasy</a>
+                    <a title="browser-scifi" href="https://www.freetogame.com/browser/sci-fi">Browser Sci-Fi</a>
+                    <a title="browser-racing" href="https://www.freetogame.com/browser/racing">Browser Racing</a>
+                    <a title="browser-social" href="https://www.freetogame.com/browser/social">Browser Social</a>
+                    <a title="browser-sports" href="https://www.freetogame.com/browser/sports">Browser Sports</a>
+                    <a title="browser-games" class="blue" href="https://www.freetogame.com/browser/games">Browser Games</a>
+                </section>
             </li>
             <li><a href="https://www.freetogame.com/giveaways">Special Offers </a></li> <!--kulang ng 1-->
             <li><a href="https://www.freetogame.com/top">Top 2023 </a></li>
-            <li><a href="/freetogame.html">... </a></li>
+            <li>
+                <button id="others">...</button>
+                <section class="option-dropdown dropdown-others">
+                    <p >Explore our other sites</p>
+                    <a href="https://www.gamerpower.com/">GamerPower</a>
+                    <a href="https://www.mmobomb.com/">MMOBomb</a>
+                    <a href="https://www.gamescamp.com/">GamesCamp</a>
+                </section>
+            </li>
         </nav>
         
         <nav id="right-nav">
@@ -300,8 +300,8 @@
             </form>
 
             <section class="box-games">
-                <section class="contents" id="Overwatch2">
-                    <a href="/overwatch2.html">
+                <section class="contents">
+                    <!-- <a href="/overwatch2.html">
                         <img class ="thumbnail" id="overwatch2" src="overwatch2.png" alt="Overwatch2.png" />
                         <section id="header-free">
                             <h2>Overwatch 2</h2>
@@ -323,7 +323,7 @@
                             <li class="type">Shooter</li>
                             <li><img id="windows" src="/windows-174-svgrepo-com.svg" alt="windows-logo" /></li>
                         </ul>
-                    </ul>                    
+                    </ul>                     -->
                 </section>
 <!-- 
                 <section class="contents" id="DiabloImmortal">

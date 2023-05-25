@@ -35,7 +35,9 @@ const getGamesByPlatformCategorySort = async (platform, category, sort) => {
 
 
 //return certain game
-const getCertainGame = async (id) => {
+const getCertainGame = async () => {
+    const id = localStorage.getItem("gameId"); 
+    
     const base = 'https://www.freetogame.com/api/game';
     const query = `?id=${id}`; 
 

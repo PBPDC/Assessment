@@ -149,6 +149,40 @@ nav button:hover { /*whenever the button (join free) is hovered, the font and bo
     color: lightskyblue;
 }
 
+.option-dropdown {
+    display: none;
+    position: absolute;
+
+    background-color: #272b30;
+}
+
+.option-dropdown a {
+    display: flex;
+    flex-direction: column;
+
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    
+
+
+
+    
+}
+
+#free-games, #browser-games, #others {
+    color: grey;
+    border: none;
+}
+
+#others {
+    width: 20px;
+}
+
+.blue {
+    color: skyblue;
+}
 
 /*NAVIGATION BAR*/
 
@@ -775,6 +809,12 @@ textarea { /*sets the properties of the input textarea*/
 
 #specs {
     width: 650px;
+}
+
+#specs-blockquote {
+    margin-left: 0px;
+    margin-right: 0px;
+    text-align: justify;
 }
 
 #row-one-specs, #row-two-specs, #row-three-specs { /*sets the ul to two columns*/
