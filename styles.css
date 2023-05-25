@@ -1326,6 +1326,7 @@ textarea { /*sets the properties of the input textarea*/
     .box-games { /*boxs games are now two columns*/
         /* grid-template-columns: 1fr 1fr;
         grid-gap: 20px; */
+        align-content: flex-start;
 
         column-gap: 20px;
         
@@ -1336,6 +1337,20 @@ textarea { /*sets the properties of the input textarea*/
         margin-bottom: 20px;
 
     
+    }
+
+    .contents { /*sets the container of the individual games on the box*/
+        display: flex;
+        flex-direction: column;
+    
+        
+        height: 350px;
+    
+        border: 0;
+        border-radius: 10px;
+        background-color:#32383e; 
+        
+        
     }
 
     #copyright {
