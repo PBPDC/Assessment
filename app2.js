@@ -1,6 +1,7 @@
 const mainData = document.querySelector('#whole-main'); 
 const hamBurger = document.querySelector('#hamburger'); 
 
+
 const updateUI = async (data) => {
 
     const details = await data; 

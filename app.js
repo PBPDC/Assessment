@@ -22,7 +22,7 @@ const updateUI = async (data) => {
         const clone = contentGame.cloneNode(true);
 
         clone.innerHTML = `
-            <a href=${details[i].freetogame_profile_url}>
+            <a href="/overwatch2.html">
             <img class="thumbnail" id="${details[i].id}" src="${details[i].thumbnail}" alt="${details[i].title}.png" />
             <section id="header-free">
                 <h2>${details[i].title}</h2>
@@ -42,7 +42,7 @@ const updateUI = async (data) => {
                 </li>
                 <ul id="type-windows">
                     <li class="type">${details[i].genre}</li>
-                    <li><img id="${details[i].platform}" src="/windows-174-svgrepo-com.svg" alt="${details[i].platform}" /></li>
+                    <li><img id="${details[i].platform}" src=${checkPlatformForPic(details[i].platform)} alt="${checkPlatformForPic(details[i].platform)}" /></li>
                 </ul>
             </ul>           
         `;
@@ -63,6 +63,13 @@ updateUI(getLiveGames());
 const category = new Set(); 
 const platformUsed = new Set();   
 
+function checkPlatformForPic(platform) {
+    if (platform === "PC (Windows)") {
+        return '/windows-174-svgrepo-com.svg'
+    }
+
+    return '/browser-fill-svgrepo-com.svg'
+}; 
 
 function checkFilter(event) { 
     const checkbox = event.target; 
@@ -102,6 +109,5 @@ hamBurger.addEventListener('click', () => {
         dropDownContainer.style.display = "block";
     }
     
-    
-    
 });
+

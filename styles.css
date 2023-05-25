@@ -106,28 +106,24 @@ nav button:hover { /*whenever the button (join free) is hovered, the font and bo
 }
 
 .dropdown-options {
-    /* display: none; */
-    display:flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
 
-    min-width: 350px;
-    min-height: 400px;
+    width: 350px;
+    height: 400px;
 
     padding-top: 40px;
-    padding-left: 10px;
-
     
-
 }
+
 .dropdown-container {
     display: none;
-    position: relative;
+    position: absolute;
     background-color: #272b30;
     z-index: -1;
     
-       
 
 }
 
@@ -977,6 +973,19 @@ textarea { /*sets the properties of the input textarea*/
         
     }
 
+    .dropdown-options {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+    
+        width: 390px;
+        height: 400px;
+    
+        padding-top: 40px;
+        
+    }
+
     nav select { /*sets the properties of the hamburger dropdown*/
         border: solid 1px grey;
         border-radius: 5px;
@@ -1084,6 +1093,20 @@ textarea { /*sets the properties of the input textarea*/
         cursor: pointer;
     
         background-color: #272b30;
+    }
+
+    .dropdown-options {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+    
+        width: 850px;
+        height: 400px;
+    
+        padding-top: 40px;
+
+        
     }
 
     #main-content { /*puts box-games beside fieldsets*/
@@ -1209,6 +1232,7 @@ textarea { /*sets the properties of the input textarea*/
 
         list-style: none;
     }
+
 
     #whole-main {
         margin-top: 80px;
