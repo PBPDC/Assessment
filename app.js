@@ -6,11 +6,13 @@ const hamBurgerButton = document.querySelector('#hamburger');
 const freeToGameButton = document.querySelector('#free-games'); 
 const browserGamesButton = document.querySelector('#browser-games');
 const othersButton = document.querySelector('#others');
+const browserGamesButtonHamburger = document.querySelector('#free-games-hamburger');
 
 const dropDownHamBurger = document.querySelector('.dropdown-container'); 
 const dropDownBrowser = document.querySelector('.dropdown-browser');
 const dropDownPC = document.querySelector('.dropdown-pc');
 const dropDownOthers = document.querySelector('.dropdown-others');
+const dropDownPCHamBurger = document.querySelector('.dropdown-pc-hamburger');
 
 
 
@@ -163,5 +165,12 @@ othersButton.addEventListener('click', () => {
 });
 
 
-
+browserGamesButtonHamburger.addEventListener('click', () => {
+    if (dropDownPCHamBurger.style.display === "block") {
+        dropDownPCHamBurger.style.display = "none";
+    } else {
+        dropDownPCHamBurger.style.display = "block";
+    }
+    
+})
 

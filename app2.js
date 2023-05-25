@@ -1,11 +1,30 @@
 const mainData = document.querySelector('#whole-main'); 
-const hamBurger = document.querySelector('#hamburger'); 
+
+const hamBurgerButton = document.querySelector('#hamburger'); 
+const freeToGameButton = document.querySelector('#free-games'); 
+const browserGamesButton = document.querySelector('#browser-games');
+const othersButton = document.querySelector('#others');
+
+const dropDownHamBurger = document.querySelector('.dropdown-container'); 
+const dropDownBrowser = document.querySelector('.dropdown-browser');
+const dropDownPC = document.querySelector('.dropdown-pc');
+const dropDownOthers = document.querySelector('.dropdown-others');
+
+
+// const sendButton = document.querySelector('#send-button');
+const readMoreButton = document.querySelector('.readmore');  
+
+
+
 
 
 const updateUI = async (data) => {
 
     const details = await data; 
     
+    let paragraphs = details.description.split(/\r\n\r\n/);
+
+
     const beforeScreenshots = `
         <main id="main-left">
             <section id="overwatch-pic">
@@ -18,10 +37,10 @@ const updateUI = async (data) => {
             </section>
 
             <section id="preference">
-                <li><a href="/freetogame.html"><img id="like" src="/like.png" /></li></a>
-                <li><a href="/freetogame.html"><img id="meh" src="/meh.png" /></li></a>
-                <li><a href="freetogame.html"><img id="dislike" src="/dislike.png" /></li></a>
-                <li><a href="/freetogame.html"><img id="add" src="/add.png" /></li></a>
+                <li><img class="hover" id="like" onclick="mustBeSignedIn();" src="/like.png" /></li>
+                <li><img class="hover" id="meh" onclick="mustBeSignedIn();" src="/meh.png" /></li>
+                <li><img class="hover" id="dislike" onclick="mustBeSignedIn();" src="/dislike.png" /></li>
+                <li><img class="hover" id="add" onclick="mustBeSignedIn();" src="/add.png" /></li>
             </section>
 
             <section id="account">
@@ -65,9 +84,9 @@ const updateUI = async (data) => {
                 <section id="comment">
                     <p>What do you think about Overwatch 2?</p>
                     <section id="linkers">
-                        <a href="/freetogame.html"><img src="/comfortable-easy-emoji-svgrepo-com.svg" /> 7</a>
-                        <a href="/freetogame.html"><img src="/cry-emoji-emoticon-svgrepo-com.svg" /> 0</a>
-                        <a href="/freetogame.html"><img src="/emoji-emoticon-frowning-svgrepo-com.svg"> 0</a>
+                        <img class="hover" onclick="mustBeSignedIn();" src="/comfortable-easy-emoji-svgrepo-com.svg" /> 7</a>
+                        <img class="hover" onclick="mustBeSignedIn();" src="/cry-emoji-emoticon-svgrepo-com.svg" /> 0</a>
+                        <img class="hover" onclick="mustBeSignedIn();" src="/emoji-emoticon-frowning-svgrepo-com.svg"> 0</a>
                     </section>
                 </section>
 
@@ -75,24 +94,24 @@ const updateUI = async (data) => {
                     <textarea id="comment-text" name="comment" rows="3" cols="50"
                         placeholder="Write a review for ${details.title}! Share your thoughts with our community."></textarea>
 
-                    <button><img src="alt-paper-plane-svgrepo-com.svg" /></button>
+                    <button id="send-button" onclick="mustBeSignedIn();"><img id="send" src="alt-paper-plane-svgrepo-com.svg" /></button>
                 </p>
             </form>
 
             <section id="about-overwatch2">
                 <header><h3>About ${details.title}</h3></header>
-                <blockquote id="oneparagraph">
-                    ${details.description}
-                </blockquote>
+                <section id="oneparagraph">
+                    
+                </section>
 
-                <a href="/freetogame.html">&#43; Read More</a>
+                <button class="readmore" onclick="makeHeightBigger();">&#43; Read More</button>
             </section>
 
             <section id="disclosure">
                 <blockquote id="disclose">
                     Disclosure: FreeToGame works closely with publishers and developers to offer a free and rewarding
                     experience. In order to keep everything free to use we may sometimes earn a small commission from some partners. Find more info
-                    in our <a href="/freetogame.html">FAQ</a> page.
+                    in our <a href="https://www.freetogame.com/faq">FAQ</a> page.
                 </blockquote>
             </section>
 
@@ -130,7 +149,9 @@ const updateUI = async (data) => {
                         <p>${details.platform} (Client)</p>
                     </li>
                 </ul>
-            </section>`
+            </section>`;
+
+            
 
             let screenShotsPics = '';
 
@@ -257,7 +278,7 @@ const updateUI = async (data) => {
                 <section id="button-caption">
                     <ul id="cap">
                         <li>Play this game and post your review!</li>
-                        <li><button>SUBMIT REVIEW</button></li>
+                        <li><a href="#comments-and-suggestions"><button id="submit-review">SUBMIT REVIEW</button></a></li>
                     </ul>
                 </section>
 
@@ -304,8 +325,77 @@ const updateUI = async (data) => {
                 `;
 
         mainData.innerHTML = beforeScreenshots + screenShotsPics + specs + reviews;
+
+        paragraphs.forEach(paragraph => {
+            let p = document.createElement('p'); 
+    
+            p.innerHTML = `${paragraph}`;
+    
+            document.querySelector("#oneparagraph").appendChild(p);
+        });
     };
 
 
 
 updateUI(getCertainGame());
+
+function mustBeSignedIn() {
+    alert("You must be signed in to perform this action");
+};
+
+function makeHeightBigger() {
+    
+    const readmore = readMoreButton.classList; 
+
+    if (!readmore.contains("on")) {
+        readmore.add('on'); 
+        document.querySelector('#oneparagraph').style.height = 'auto'; 
+    } else {
+        readmore.toggle('on');
+        document.querySelector('#oneparagraph').style.height = '100px';
+    }
+};
+    
+    
+
+hamBurgerButton.addEventListener('click', () => {
+
+    if (dropDownHamBurger.style.display === "block") {
+        dropDownHamBurger.style.display = "none";
+    } else {
+        dropDownHamBurger.style.display = "block";
+    }
+    
+});
+
+freeToGameButton.addEventListener('click', () => {
+
+    if (dropDownPC.style.display === "block") {
+        dropDownPC.style.display = "none";
+    } else {
+        dropDownPC.style.display = "block";
+    }
+    
+});
+
+browserGamesButton.addEventListener('click', () => {
+
+    if (dropDownBrowser.style.display === "block") {
+        dropDownBrowser.style.display = "none";
+    } else {
+        dropDownBrowser.style.display = "block";
+    }
+    
+});
+
+othersButton.addEventListener('click', () => {
+
+    if (dropDownOthers.style.display === "block") {
+        dropDownOthers.style.display = "none";
+    } else {
+        dropDownOthers.style.display = "block";
+    }
+    
+});
+
+

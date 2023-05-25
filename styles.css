@@ -132,6 +132,8 @@ nav button:hover { /*whenever the button (join free) is hovered, the font and bo
     align-items: center;
 
     justify-content: flex-start;
+
+    
     
 
 }
@@ -154,6 +156,10 @@ nav button:hover { /*whenever the button (join free) is hovered, the font and bo
     position: absolute;
 
     background-color: #272b30;
+
+    
+
+    
 }
 
 .option-dropdown a {
@@ -165,6 +171,7 @@ nav button:hover { /*whenever the button (join free) is hovered, the font and bo
     padding-right: 10px;
     padding-bottom: 10px;
     
+    z-index: 10;
 
 
 
@@ -494,6 +501,8 @@ fieldset section { /*sets the paddings of the content(words) in the fieldsets*/
 
 .contents:hover { /*whenever an individual game on the box is hovered, the cursor will change to a pointer*/
     cursor: pointer;
+    transform: scale(1.03);
+     
 }
 
 #header-free { /*sets the properties of game title and the free icon*/
@@ -560,6 +569,8 @@ fieldset section { /*sets the paddings of the content(words) in the fieldsets*/
 
 
     list-style: none;
+
+    z-index: 1;
 }
 
 #free-button { /*sets the properties of the free-button*/
@@ -729,20 +740,47 @@ textarea { /*sets the properties of the input textarea*/
 #text_button button:hover { /*whenever send button is hovered, it will change the color to white*/
     filter: brightness(1.5);
 }
+
+.hover:hover {
+    cursor: pointer;
+    filter: brightness(1.5);
+}
 /*UPPER RIGHT*/
 
 
 
 /*MIDDLE RIGHT*/
+
+.readmore {
+    background-color: transparent;
+    border: 0;
+    font-size: 15px;
+}
+
+.readmore:hover {
+    color: white;   
+    cursor: pointer;
+}
 #oneparagraph, #twoparagraph, #disclose { /*sets the container of the paragraphs and disclosure statement*/
     margin-left: 0;
     max-width: 630px;
     text-align: justify;
 }
 
+#oneparagraph {
+    overflow: hidden; 
+
+    height: 100px;
+}
+
+#oneparagraph p {
+    margin-bottom: 20px;
+}
+
 #disclose {
     font-size: smaller;
     font-style: italic;
+    margin-top: 10px;
 }
 
 #disclose a, #about-overwatch2 a { /*sets the links of disclose and about-overwatch2 to white*/
@@ -789,7 +827,9 @@ textarea { /*sets the properties of the input textarea*/
 
 .ss {
     width: 100%;
+
 }
+
 /*SCREENSHOTS*/
 /*MIDDLE RIGHT*/
   
@@ -1023,6 +1063,7 @@ textarea { /*sets the properties of the input textarea*/
         height: 400px;
     
         padding-top: 40px;
+        
         
     }
 
@@ -1401,8 +1442,9 @@ textarea { /*sets the properties of the input textarea*/
     
         border: 0;
         border-radius: 10px;
-        background-color:#32383e;  
-     
+        background-color:#32383e; 
+        
+        
     }
 
     #type-windows {
