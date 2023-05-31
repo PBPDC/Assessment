@@ -1,4 +1,5 @@
 const contentGame = document.querySelector('.contents');
+const mainData = document.querySelector('main');
 const categoryCheckBox = document.querySelectorAll('.filter-checkbox'); 
 const sortDropDown = document.querySelector('#sort');
 
@@ -26,6 +27,11 @@ const updateUI = async (data) => {
     document.querySelectorAll('.contents').forEach(e => e.remove());
     
 
+    if (details.length === undefined) {
+        //alert("404: Object not found: Game or endpoint not found.");
+        error(); 
+    }; 
+
     //update details template 
     for (let i = 0; i < details.length; i++) {
 
@@ -33,7 +39,7 @@ const updateUI = async (data) => {
         clone.setAttribute("id", `${details[i].id}`); 
 
         clone.innerHTML = `
-                <a href="/overwatch2.html">
+                <a href="/gamepage.html?id=${details[i].id}">
                     <img class="thumbnail" id="${details[i].id}" src="${details[i].thumbnail}" alt="${details[i].title}.png" />
                     <section id="header-free">
                         <h2>${details[i].title}</h2>
@@ -60,18 +66,20 @@ const updateUI = async (data) => {
 
         document.querySelector(".box-games").appendChild(clone); 
 
-
+        
 
     };
 
-    document.querySelectorAll('.contents').forEach(function(event) {
-        event.addEventListener('click', openGame);
-    });
+    // document.querySelectorAll('.contents').forEach(function(event) {
+    //     event.addEventListener('click', clicked); 
+    // });
+
+
 
 };
 
 
-updateUI(getLiveGames()); 
+
 
 
 const category = new Set(); 
@@ -85,13 +93,12 @@ function checkPlatformForPic(platform) {
     return '/browser-fill-svgrepo-com.svg'
 };
 
-function openGame(event) {
-    const game = event.currentTarget; 
-    console.log(game.id);
+// function clicked(event) {
+//     const eventNow = event.currentTarget; 
 
-    localStorage.setItem("gameId", game.id); 
 
-};
+//     return eventNow.id;
+// };
 
 
 function checkFilter(event) { 
@@ -114,9 +121,26 @@ function checkFilter(event) {
 
     
 
-    updateUI(getGamesByPlatformCategorySort(platformDefault, category, sortDropDown.value)); 
+    updateUI(getGamesByPlatformCategorySort(platformDefault, category, sortDropDown.value))
+        .catch(err => {
+            error(); 
+        });
 
+};
 
+const error = () => {
+
+    mainData.innerHTML = `
+        <section style='height:500px'>
+            <p style='font-size:50px'> Sorry, something went wrong.</p> 
+            <a href='/index.html'>Click here to return to main page.</a>
+        </section>
+    `;
+    mainData.style.color='gray';
+    mainData.style.justifyContent='center';
+    mainData.style.textAlign='center';
+    mainData.style.height='500px';
+    mainData.style.paddingTop ='50px';
 }
 
 categoryCheckBox.forEach(function(checkbox) {
@@ -164,13 +188,26 @@ othersButton.addEventListener('click', () => {
     
 });
 
+window.onpageshow = () => {
+    updateUI(getLiveGames())
+        .catch(err => {
+            error(); 
+        });
+};
 
-browserGamesButtonHamburger.addEventListener('click', () => {
-    if (dropDownPCHamBurger.style.display === "block") {
-        dropDownPCHamBurger.style.display = "none";
-    } else {
-        dropDownPCHamBurger.style.display = "block";
-    }
+
+
+// browserGamesButtonHamburger.addEventListener('click', () => {
+//     if (dropDownPCHamBurger.style.display === "block") {
+//         dropDownPCHamBurger.style.display = "none";
+//     } else {
+//         dropDownPCHamBurger.style.display = "block";
+//     }
     
-})
+// })
+
+
+
+
+
 

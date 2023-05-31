@@ -1,4 +1,5 @@
 const mainData = document.querySelector('#whole-main'); 
+const titleGame = document.querySelector('head'); 
 
 const hamBurgerButton = document.querySelector('#hamburger'); 
 const freeToGameButton = document.querySelector('#free-games'); 
@@ -14,16 +15,23 @@ const dropDownOthers = document.querySelector('.dropdown-others');
 // const sendButton = document.querySelector('#send-button');
 const readMoreButton = document.querySelector('.readmore');  
 
-
+const urlParams = new URLSearchParams(); 
+const query = window.location.search;
 
 
 
 const updateUI = async (data) => {
 
     const details = await data; 
-    
+
     let paragraphs = details.description.split(/\r\n\r\n/);
 
+    titleGame.innerHTML = `
+        <meta charset="UTF-8">
+        <link rel="icon" href="/freetogame.png" />
+        <title>${details.title} Download and Reviews (2023)</title>
+        <link rel="stylesheet" href="styles.css" />
+    `;
 
     const beforeScreenshots = `
         <main id="main-left">
@@ -155,7 +163,7 @@ const updateUI = async (data) => {
 
             let screenShotsPics = '';
 
-            if (details.screenshots.size !== 0) {
+            if (details.screenshots.size > 0) {
                 screenShotsPics =
                     `<section id="screenshots">
                         <header><h3>${details.title} Screenshots</h3></header>
@@ -337,7 +345,27 @@ const updateUI = async (data) => {
 
 
 
-updateUI(getCertainGame());
+
+//     .catch(err => {
+//         alert(err.message); 
+//         window.location.href = 'https://freetogame.com';
+// });
+
+
+const error = () => {
+
+    mainData.innerHTML = `
+        <section style='height:500px'>
+            <p style='font-size:50px'> Sorry, something went wrong.</p> 
+            <a href='/index.html'>Click here to return to main page.</a>
+        </section>
+    `;
+    mainData.style.color='gray';
+    mainData.style.justifyContent='center';
+    mainData.style.textAlign='center';
+    mainData.style.height='500px';
+    mainData.style.paddingTop ='50px';
+}
 
 function mustBeSignedIn() {
     alert("You must be signed in to perform this action");
@@ -355,7 +383,7 @@ function makeHeightBigger() {
         document.querySelector('#oneparagraph').style.height = '100px';
     }
 };
-    
+
     
 
 hamBurgerButton.addEventListener('click', () => {
@@ -398,4 +426,26 @@ othersButton.addEventListener('click', () => {
     
 });
 
+function addUrlParameter(id, value) {
+    urlParams.set(id, value); 
+
+    const newUrl = window.location.pathname + '?' + urlParams.toString(); 
+    window.history.pushState(null, '', newUrl); 
+};
+
+window.onpageshow = () => {
+ 
+    const id = query.split('=')[1]; 
+
+    addUrlParameter('id', id); 
+
+    updateUI(getCertainGame(urlParams.get('id'))).catch(err => {
+        console.log(err);
+        error();
+    })
+
+    
+
+
+}
 

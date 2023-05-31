@@ -5,7 +5,7 @@ const getLiveGames = async () => {
     const response = await fetch(base); 
     const data = await response.json(); 
 
-    return data;
+    return data; 
 
 };
 
@@ -24,8 +24,6 @@ const getGamesByPlatformCategorySort = async (platform, category, sort) => {
         query = `/games?platform=${platform}&sort-by=${sort}`; 
     }
 
-    console.log(query);
-
     const response = await fetch(base + query); 
     const data = await response.json(); 
 
@@ -35,16 +33,86 @@ const getGamesByPlatformCategorySort = async (platform, category, sort) => {
 
 
 //return certain game
-const getCertainGame = async () => {
-    const id = localStorage.getItem("gameId"); 
-    
+const getCertainGame = async (id) => {
+
     const base = 'https://www.freetogame.com/api/game';
+
     const query = `?id=${id}`; 
 
     const response = await fetch(base + query); 
-    const data = await response.json(); 
+    const data = await response.json();
 
+            
     return data; 
+
+    // const path = window.location.pathname;
+    // const urlGameTitle = path.split('html')[0].split(/[./]/)[1];
+    // const queryString = window.location.search;  
+
+    // const wholeGameList = getLiveGames(); 
+
+    // const details = await wholeGameList; 
+
+    // const params = new URLSearchParams();
+    
+    // // const url = new URL(window.location.href); 
+
+  
+
+
+
+
+    // for (let j = 0; j < details.length; j++) {
+    //     params.set(details[j].title.toLowerCase().split(' ').join('-'), details[j].id); 
+        
+    // }
+
+
+    
+
+    // for (let i = 0; i < params.size; i++) {
+    //     if()
+    // }
+
+    // for (let i = 0; i < details.length; i++) {
+
+    //     const queryString = new URLSearchParams(details[i].id).toString();
+
+    //     console.log(queryString);
+        
+        // if (urlGameTitle === details[i].title.toLowerCase().split(' ').join('')) {
+                
+        //     console.log('hello');
+            
+        //     const query = `?id=${details[i].id}`; 
+
+        //     const response = await fetch(base + query); 
+        //     const data = await response.json();
+
+            
+        //     return data; 
+
+        // } else {
+        //     // alert("INVALID GAME URL"); 
+        //     console.log('not here');
+        // }
+    // };
+
+      
+
+    
+
+    
+    // const base = 'https://www.freetogame.com/api/game';
+    // const query = `?id=${id}`; 
+
+    
+
+
+    // const response = await fetch(base + query); 
+    // const data = await response.json(); 
+
+    // return data; 
 
 };
 
